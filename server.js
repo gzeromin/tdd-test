@@ -9,7 +9,7 @@ const productRoutes = require('./routes');
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb+srv://test:1234abcd@cluster0.gv0pa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  'mongodb://127.0.0.1:27017/tdd-test',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -33,7 +33,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({message: error.message});
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+// app.listen(PORT, HOST);
+// console.log(`Running on http://${HOST}:${PORT}`);
 
 module.exports = app;
