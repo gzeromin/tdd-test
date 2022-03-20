@@ -51,22 +51,22 @@ it("GET id doesnt exist /api/products/:productId", async () => {
   expect(response.statusCode).toBe(404);
 })
 
-// it("PUT /api/products/:productId", async () => {
-//   const response = await request(app)
-//     .put("/api/products" + firstProduct._id)
-//     .send({ name: "updated name", description: "updated description" });
-//   expect(response.statusCode).toBe(200);
-//   expect(response.body.name).toBe("updated name");
-//   expect(response.body.description).toBe("updated description");
+it("PUT /api/products/:productId", async () => {
+  const response = await request(app)
+    .put("/api/products/" + firstProduct._id)
+    .send({ name: "updated name", description: "updated description" });
+  expect(response.statusCode).toBe(200);
+  expect(response.body.name).toBe("updated name");
+  expect(response.body.description).toBe("updated description");
 
-// })
+})
 
-// it("should return 404 on PUT /api/products/:productId", async () => {
-//   const response = await request(app)
-//     .put("/api/products" + "")
-//     .send({ name: "updated name", description: "updated description" });
-//   expect(response.statusCode).toBe(404);
-// })
+it("should return 404 on PUT /api/products/:productId", async () => {
+  const response = await request(app)
+    .put("/api/products" + "523703d06a6e4f867ae07d78")
+    .send({ name: "updated name", description: "updated description" });
+  expect(response.statusCode).toBe(404);
+})
 
 // it("DELETE /api/products/:productId", async () => {
 //   const response = await request(app)
