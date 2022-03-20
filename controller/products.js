@@ -42,7 +42,7 @@ exports.updateProduct = async (req, res, next) => {
       { new: true }
     );
     if (updatedProduct) {
-      res.status(200).json(product);
+      res.status(200).json(updatedProduct);
     } else {
       res.status(404).send();
     }
