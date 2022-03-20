@@ -162,7 +162,7 @@ describe("Product Controller Delete", () => {
     expect(productModel.findByIdAndDelete).toBeCalledWith(productId);
   });
   it("should return 200 response", async () => {
-    let deleteProduct = {
+    let deletedProduct = {
       name: "deletedProduct",
       description: "it is deleted"
     };
